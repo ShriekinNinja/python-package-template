@@ -1,6 +1,6 @@
 {
   "project_name": "python-project",
-  "project_description": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}`",
+  "project_description": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "license": [
     "MIT",
