@@ -19,10 +19,6 @@ categories:
     labels: [dependencies]
 
 template: |
-  ## What’s Changed
+  ### What’s Changed
 
   $CHANGES
-
-  ## :busts_in_silhouette: List of contributors
-
-  $CONTRIBUTORS
