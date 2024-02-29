@@ -1,4 +1,4 @@
-name: Release
+{% raw %}name: Release
 
 on:
   release:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [{% raw %}"{{ cookiecutter.minimal_python_version }}"{% endraw %}]
+        python-version: [{% endraw %}"{{ cookiecutter.minimal_python_version }}"{% raw %}]
 
     steps:
       - uses: actions/checkout@v4
@@ -56,4 +56,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/*
+          files: dist/*{% endraw %}
