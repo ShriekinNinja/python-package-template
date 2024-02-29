@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["{{ cookiecutter.minimal_python_version }}"]
+        python-version: [{% raw %}"{{ cookiecutter.minimal_python_version }}"{% endraw %}]
 
     steps:
       - uses: actions/checkout@v4
