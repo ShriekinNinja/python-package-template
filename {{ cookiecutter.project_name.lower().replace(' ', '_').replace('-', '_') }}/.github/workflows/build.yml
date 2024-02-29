@@ -1,4 +1,4 @@
-{% raw %}name: Build
+name: Build
 
 on: [ push, pull_request ]
 
@@ -39,4 +39,4 @@ jobs:
 
       - name: Run safety checks
         run: |
-          make check-safety{% endraw %}
+          make check-safety

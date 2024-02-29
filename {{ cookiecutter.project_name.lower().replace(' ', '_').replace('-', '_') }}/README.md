@@ -51,7 +51,7 @@ make codestyle
 ```bash
 git add .
 git commit -m ":tada: Initial commit"
-git branch -M main
+git branch -M master
 git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
 ```
 
