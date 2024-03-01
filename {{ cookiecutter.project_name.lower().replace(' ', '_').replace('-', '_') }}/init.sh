@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Grant execute permission to this script
-chmod +x "$0"
-
 # Install pyenv
 pyenv local {{ cookiecutter.minimal_python_version }}
 wait

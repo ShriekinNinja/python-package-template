@@ -21,7 +21,6 @@
 
 {{ cookiecutter.project_description }}
 
-```bash
 ## 🛡 License
 
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)

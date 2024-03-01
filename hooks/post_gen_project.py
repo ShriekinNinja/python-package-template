@@ -71,6 +71,7 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
     #############################################################
 
     $ cd {project_name}
+    $ chmod +x init.sh
     $ run init.sh or init.bat depending on your OS
     """
     print(textwrap.dedent(message))

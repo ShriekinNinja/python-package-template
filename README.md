@@ -16,13 +16,11 @@ Your next Python package needs a bleeding-edge project structure.
 </div>
 
 ## TL;DR
-
+>!!! Be sure to have [pyenv](https://github.com/pyenv/pyenv) and Python 3.12 installed. !!!
 ```bash
 pip install -U cookiecutter
 cookiecutter gh:ShriekinNinja/python-package-template
 ```
-
-> All you need is the latest version of cookiecutter 😉
 
 ## 🚀 Features
 
