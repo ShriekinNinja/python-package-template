@@ -21,24 +21,47 @@
 
 {{ cookiecutter.project_description }}
 
+### Initialize your code
+
+1. Initialize `git` inside your repo:
+
+```bash
+git init
+```
+
+2. If you don't have `Poetry` installed run:
+
+```bash
+make poetry-download
+```
+
+3. Initialize poetry and install `pre-commit` hooks:
+
+```bash
+make install
+make pre-commit-install
+```
+
+4. Run the codestyle:
+
+```bash
+make codestyle
+```
+
+5. Upload initial code to GitHub:
+
+```bash
+git add .
+git commit -m ":tada: Initial commit"
+git branch -M master
+git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
+```
+
 ## 🛡 License
 
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
 This project is licensed under the terms of the `{{ cookiecutter.license }}` license. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE) for more details.
-
-## 📃 Citation
-
-```bibtex
-{% raw %}@misc{{% endraw %}{{ cookiecutter.project_name }},
-  author = {% raw %}{{% endraw %}{{ cookiecutter.organization }}{% raw %}}{% endraw %},
-  title = {% raw %}{{% endraw %}{{ cookiecutter.project_description }}{% raw %}}{% endraw %},
-  year = {% raw %}{{% endraw %}{% now 'utc', '%Y' %}{% raw %}}{% endraw %},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}{% raw %}}}{% endraw %}
-}
-```
 
 ## Credits [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
 

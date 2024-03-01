@@ -23,10 +23,6 @@ install:
 	poetry install -n
 	-poetry run mypy --install-types --non-interactive ./
 
-.PHONY: update-requirements
-update-requirements:
-	poetry lock -n && poetry export --without-hashes > requirements.txt
-
 .PHONY: pre-commit-install
 pre-commit-install:
 	poetry run pre-commit install

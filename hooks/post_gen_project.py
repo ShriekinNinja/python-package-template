@@ -65,36 +65,11 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
         github: GitHub username
     """
     message = f"""
-    ####################################################
-    ##  {project_name} is created.                    ##
-    ##  Follow these steps BEFORE opening in Pycharm  ##
-    ####################################################
-    $ cd {project_name}
-    1) Setup Pyenv and git:
-
-        $ pyenv local 3.12.2
-        $ git init
-
-    2) If you don't have Poetry installed run:
-
-        $ make poetry-download
-
-    3) Initialize poetry and install pre-commit hooks:
-
-        $ poetry env use $(which python)
-        $ make install
-        $ make pre-commit-install
-
-    4) Run codestyle:
-
-        $ make codestyle
-
-    5) Upload initial code to GitHub:
-
-        $ git add .
-        $ git commit -m ":tada: Initial commit"
-        $ git branch -M main
-        $ git remote add origin https://github.com/{github}/{project_name}.git
+    ###################################
+    ##  {project_name} is created.   ##
+    ##  Open in Pycharm to continue  ##
+    ###################################
+    $ cd {project_name} && pycharm .
     """
     print(textwrap.dedent(message))
 

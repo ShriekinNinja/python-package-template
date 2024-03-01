@@ -14,7 +14,7 @@
   "minimal_python_version": [
     3.12
   ],
-  "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
+  "github_name": "{{ cookiecutter.organization }}",
   "email": "service@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
   "version": "0.1.0",
   "line_length": 88,
