@@ -4,7 +4,7 @@
 chmod +x "$0"
 
 # Install pyenv
-pyenv local < .python-version
+pyenv local {{ cookiecutter.minimal_python_version }}
 wait
 
 # Initialize git
