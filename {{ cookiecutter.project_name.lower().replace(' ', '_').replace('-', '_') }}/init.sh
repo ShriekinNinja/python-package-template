@@ -3,6 +3,10 @@
 # Grant execute permission to this script
 chmod +x "$0"
 
+# Install pyenv
+pyenv local < .python-version
+wait
+
 # Initialize git
 git init
 wait
