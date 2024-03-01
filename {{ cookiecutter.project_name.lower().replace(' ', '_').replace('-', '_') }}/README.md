@@ -21,38 +21,19 @@
 
 ### Initialize your code
 
-1. Initialize `git` inside your repo:
+1. Initialize the project with `git` and `poetry`:
 
 ```bash
-cd {{ cookiecutter.project_name }} && git init
+cd {{ cookiecutter.project_name }}
 ```
 
-2. If you don't have `Poetry` installed run:
+2. Run the init script depending on your OS:
 
 ```bash
-make poetry-download
+./init.sh
 ```
-
-3. Initialize poetry and install `pre-commit` hooks:
-
-```bash
-make install
-make pre-commit-install
-```
-
-4. Run the codestyle:
-
-```bash
-make codestyle
-```
-
-5. Upload initial code to GitHub:
-
-```bash
-git add .
-git commit -m ":tada: Initial commit"
-git branch -M master
-git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
+```cmd
+init.cmd
 ```
 
 ### Poetry

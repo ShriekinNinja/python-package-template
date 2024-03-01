@@ -65,32 +65,13 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
         github: GitHub username
     """
     message = f"""
-    Your project {project_name} is created.
+    #############################################################
+    ##  Your project {project_name} is created.                ##
+    ##  Run init script BEFORE opening the project in Pycharm  ##
+    #############################################################
 
-    1) Now you can start working on it:
-
-        $ cd {project_name} && git init
-
-    2) If you don't have Poetry installed run:
-
-        $ make poetry-download
-
-    3) Initialize poetry and install pre-commit hooks:
-
-        $ make install
-        $ make pre-commit-install
-
-    4) Run codestyle:
-
-        $ make codestyle
-
-    5) Upload initial code to GitHub:
-
-        $ git add .
-        $ git commit -m ":tada: Initial commit"
-        $ git branch -M main
-        $ git remote add origin https://github.com/{github}/{project_name}.git
-        $ git push -u origin main
+    $ cd {project_name}
+    $ run init.sh or init.bat depending on your OS
     """
     print(textwrap.dedent(message))
 
