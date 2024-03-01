@@ -33,6 +33,7 @@ git branch -M master
 wait
 git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
 wait
+make install
 
 # Delete both scripts
 rm "$0" init.cmd
