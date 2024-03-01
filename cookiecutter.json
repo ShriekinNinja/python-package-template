@@ -19,8 +19,8 @@
   "version": "0.1.0",
   "line_length": 88,
   "create_example_template": [
-    "cli",
-    "none"
+    "none",
+    "cli"
   ],
   "_copy_without_render": [
     "poetry.lock"
