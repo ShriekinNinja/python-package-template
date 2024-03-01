@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Grant execute permission to this script
+chmod +x "$0"
+
 # Initialize git
 git init
 
