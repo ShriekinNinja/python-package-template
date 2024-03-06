@@ -12,12 +12,20 @@ poetry-download:
 poetry-remove:
 	curl -sSL https://raw.githubusercontent.com/python-poetry/install.python-poetry.org/main/install-poetry.py | $(PYTHON) - --uninstall
 
+#* Configure private repo
+.PHONY: configure-repo
+configure-repos:
+	#* @poetry config repositories.repo-name https://github.com/org-name/repo-name.git
+	#* @poetry config http-basic.messages org-name token
+
+
 #* Installation
 .PHONY: install
 install:
+	make configure-repos
 	poetry lock -n && poetry export --without-hashes > requirements.txt
 	poetry install -n
-	-poetry run mypy --install-types --non-interactive hooks tests
+	#	*	-poetry run mypy --install-types --non-interactive hooks tests
 
 .PHONY: pre-commit-install
 pre-commit-install:

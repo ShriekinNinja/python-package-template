@@ -29,6 +29,10 @@ jobs:
         with:
           path: .venv
           key: venv-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml') }}-${{ hashFiles('poetry.lock') }}
+
+      - name: Configure Repositories
+        run: make configure-repos
+
       - name: Install dependencies
         run: |
           poetry config virtualenvs.in-project true
