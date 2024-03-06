@@ -63,6 +63,7 @@ coverage = "^7.4.3"
 coverage-badge = "^1.1.0"
 pytest-html = "^4.1.1"
 pytest-cov = "^4.1.0"
+pytest-custom-exit-code = "^0.3.0"
 
 [tool.black]
 # https://github.com/psf/black
