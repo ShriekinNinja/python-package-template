@@ -46,24 +46,23 @@ python = "^{{ cookiecutter.minimal_python_version }}"
 typer = {extras = ["all"], version = "^0.9.0"}
 rich = "^13.7.0"
 {% endif %}
-[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
 bandit = "^1.7.7"
-black = {version = "^24.2.0", allow-prereleases = true}
 darglint = "^1.8.1"
-isort = {extras = ["colors"], version = "^5.13.2"}
-mypy = "^1.0.1"
-mypy-extensions = "^1.0.0"
+isort = { extras = ["colors"], version = "^5.13.2" }
+mypy = "^1.8.0"
 pre-commit = "^3.6.2"
 pydocstyle = "^6.3.0"
 pylint = "^3.1.0"
 pytest = "^8.0.2"
 pyupgrade = "^3.15.1"
-safety = "3.0.1"
+safety = "^3.0.1"
 coverage = "^7.4.3"
 coverage-badge = "^1.1.0"
 pytest-html = "^4.1.1"
 pytest-cov = "^4.1.0"
-pytest-custom-exit-code = "^0.3.0"
+black = { version = "^24.2.0", allow-prereleases = true }
 
 [tool.black]
 # https://github.com/psf/black
