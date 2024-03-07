@@ -34,3 +34,11 @@ repos:
         entry: poetry run black --config pyproject.toml
         types: [ python ]
         language: system
+
+  - repo: local
+    hooks:
+      - id: check-safety
+        name: check-safety
+        entry: make check-safety
+        types: [ python ]
+        language: system
