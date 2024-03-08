@@ -12,29 +12,11 @@ PROJECT_MODULE = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace
 CREATE_EXAMPLE_TEMPLATE = "{{ cookiecutter.create_example_template }}"
 
 # Values to generate correct license
-LICENSE = "{{ cookiecutter.license }}"
 ORGANIZATION = "{{ cookiecutter.organization }}"
 
 # Values to generate github repository
 GITHUB_USER = "{{ cookiecutter.github_name }}"
-
-licences_dict = {
-    "MIT": "mit",
-    "BSD-3": "bsd3",
-    "GNU GPL v3.0": "gpl3",
-    "Apache Software License 2.0": "apache",
-}
-
-
-def generate_license(directory: Path, licence: str) -> None:
-    """Generate license file for the project.
-
-    Args:
-        directory: path to the project directory
-        licence: chosen licence
-    """
-    move(str(directory / "_licences" / f"{licence}.txt"), str(directory / "LICENSE"))
-    rmtree(str(directory / "_licences"))
+GITHUB_ACCESS_TOKEN = "{{ cookiecutter.access_token }}"
 
 
 def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
@@ -75,7 +57,6 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
 
 
 def main() -> None:
-    generate_license(directory=PROJECT_DIRECTORY, licence=licences_dict[LICENSE])
     remove_unused_files(
         directory=PROJECT_DIRECTORY,
         module_name=PROJECT_MODULE,

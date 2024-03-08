@@ -1,21 +1,13 @@
 {
-  "project_name": "python-project",
-  "project_description": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-  "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-  "license": [
-    "MIT",
-    "BSD-3",
-    "GNU GPL v3.0",
-    "Apache Software License 2.0"
-  ],
-  "_all_python_minor_version": [
-    12
-  ],
+  "project_name": "my_project",
+  "project_description": "DarkpoolInvesting {{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "organization": "DarkpoolInvesting",
+  "github_name": "DarkpoolInvesting",
+  "github_access_token": "",
   "minimal_python_version": [
     3.12
   ],
-  "github_name": "{{ cookiecutter.organization }}",
-  "email": "service@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
+  "email": "contact@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
   "version": "0.1.0",
   "line_length": 88,
   "create_example_template": [
