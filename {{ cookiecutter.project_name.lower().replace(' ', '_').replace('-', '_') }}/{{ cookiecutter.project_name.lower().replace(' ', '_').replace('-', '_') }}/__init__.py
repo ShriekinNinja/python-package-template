@@ -1,4 +1,4 @@
-# type: ignore[attr-defined]
+# mypy: disable-error-code="attr-defined"
 """{{ cookiecutter.project_description }}"""
 
 import sys
