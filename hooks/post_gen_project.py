@@ -16,7 +16,7 @@ ORGANIZATION = "{{ cookiecutter.organization }}"
 
 # Values to generate github repository
 GITHUB_USER = "{{ cookiecutter.github_name }}"
-GITHUB_ACCESS_TOKEN = "{{ cookiecutter.access_token }}"
+GITHUB_ACCESS_TOKEN = "{{ cookiecutter.github_access_token }}"
 
 
 def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
