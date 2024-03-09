@@ -5,40 +5,51 @@ default_stages: [ commit, push ]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.5.0
+    rev: v4.5.0  # Use the ref you want to point at
     hooks:
+      - id: check-ast
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-xml
       - id: check-yaml
+        args: [ '--allow-multiple-documents' ]
+      - id: debug-statements
       - id: end-of-file-fixer
-        exclude: LICENSE
+      - id: name-tests-test
+#      - id: no-commit-to-branch
+#        args: [ '--branch', 'main', '--branch', 'master' ]
+      - id: pretty-format-json
+        args: [ '--autofix' ]
+      - id: trailing-whitespace
+        args: [ '--markdown-linebreak-ext=md' ]
 
-  - repo: local
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.1
     hooks:
       - id: pyupgrade
-        name: pyupgrade
-        entry: poetry run pyupgrade --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus
-        types: [ python ]
-        language: system
+        args: [ "--py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus" ]
 
-  - repo: local
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
     hooks:
       - id: isort
-        name: isort
-        entry: poetry run isort --settings-path pyproject.toml
-        types: [ python ]
-        language: system
+        name: isort (python)
+        args: [ '--settings-path', 'pyproject.toml' ]
 
-  - repo: local
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.2.0
     hooks:
       - id: black
-        name: black
-        entry: poetry run black --config pyproject.toml
-        types: [ python ]
-        language: system
+        args: [ '--config', 'pyproject.toml' ]
 
-  - repo: local
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v1.8.0'  # Use the sha / tag you want to point at
     hooks:
-      - id: check-safety
-        name: check-safety
-        entry: make check-safety
-        types: [ python ]
-        language: system
+      - id: mypy
+        args: [ '--config-file', 'pyproject.toml']
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.7
+    hooks:
+      - id: bandit
+        args: [ '-ll','--recursive', "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}", 'tests' ]

@@ -57,11 +57,17 @@ git branch -M master
 git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
 ```
 
-## 🛡 License
+6. Push the code to GitHub:
+   Create a new repository on GitHub and push the code
 
-[![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
-This project is licensed under the terms of the `{{ cookiecutter.license }}` license. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE) for more details.
+7. Activate `pre-commit:no-commit-to-branch` hook:
+   edit `.pre-commit-config.yaml` and uncomment the following lines:
+
+```yaml
+      -   id: no-commit-to-branch
+          args: [ '--branch', 'main', '--branch', 'master' ]
+```
 
 ## Credits [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
 

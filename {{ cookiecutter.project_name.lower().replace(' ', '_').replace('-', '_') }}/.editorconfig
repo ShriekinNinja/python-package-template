@@ -10,9 +10,8 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
-[*.{py, pyi}]
-indent_style = space
-indent_size = 4
+[*.yaml]
+indent_size = 2
 
 [Makefile]
 indent_style = tab
