@@ -57,6 +57,18 @@ git branch -M master
 git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
 ```
 
+6. Push the code to GitHub:
+   Create a new repository on GitHub and push the code
+
+
+7. Activate `pre-commit:no-commit-to-branch` hook:
+   edit `.pre-commit-config.yaml` and uncomment the following lines:
+
+```yaml
+      -   id: no-commit-to-branch
+          args: [ '--branch', 'main', '--branch', 'master' ]
+```
+
 ## Credits [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
 
 This project was generated with [`python-package-template`](https://github.com/TezRomacH/python-package-template)
