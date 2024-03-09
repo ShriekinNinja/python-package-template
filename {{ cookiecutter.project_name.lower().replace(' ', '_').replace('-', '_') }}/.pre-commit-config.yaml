@@ -23,12 +23,6 @@ repos:
       - id: trailing-whitespace
         args: [ '--markdown-linebreak-ext=md' ]
 
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.7
-    hooks:
-      - id: bandit
-        args: [ '-ll','--recursive', {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}, 'tests' ]
-
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.1
     hooks:
@@ -36,7 +30,7 @@ repos:
         args: [ "--py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus" ]
 
   - repo: https://github.com/pycqa/isort
-    rev: 5.11.2
+    rev: 5.12.0
     hooks:
       - id: isort
         name: isort (python)
@@ -48,10 +42,14 @@ repos:
       - id: black
         args: [ '--config', 'pyproject.toml' ]
 
-  - repo: local
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v1.8.0'  # Use the sha / tag you want to point at
     hooks:
-      - id: check-safety
-        name: check-safety
-        entry: make check-safety
-        types: [ python ]
-        language: system
+      - id: mypy
+        args: [ '--config-file', 'pyproject.toml']
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.7
+    hooks:
+      - id: bandit
+        args: [ '-ll','--recursive', "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}", 'tests' ]

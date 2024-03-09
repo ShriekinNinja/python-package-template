@@ -81,9 +81,8 @@ exclude = '''
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
-py_version = {{ cookiecutter.minimal_python_version.replace('.', '') }}
+py_version = 311
 line_length = {{ cookiecutter.line_length }}
-
 known_typing = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
 sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 include_trailing_comma = true
@@ -95,13 +94,16 @@ color_output = true
 [tool.mypy]
 # https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
 python_version = {{ cookiecutter.minimal_python_version }}
+strict = true
 pretty = true
 show_traceback = true
+install_types = true
+non_interactive = true
 color_output = true
-
 allow_redefinition = false
 check_untyped_defs = true
 disallow_any_generics = true
+disallow_subclassing_any = false
 disallow_incomplete_defs = true
 ignore_missing_imports = true
 implicit_reexport = false
