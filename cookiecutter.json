@@ -3,7 +3,7 @@
   "project_description": "DarkpoolInvesting {{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "organization": "DarkpoolInvesting",
   "github_name": "DarkpoolInvesting",
-  "github_access_token": "",
+  "github_access_token": "token",
   "minimal_python_version": [
     3.12
   ],
